@@ -28,9 +28,11 @@ var filters = {};
 function updateFilters() {
   console.log("success");
   // 4a. Save the element that was changed as a variable.
-  var changedInputTag = d3.select(this).select("input");
+  var changedInputTag = d3.select(this);
+  // .select("input");
   // 4b. Save the value that was changed as a variable.
   var changedValue = changedInputTag.property("value");
+  console.log(changedValue);
   // 4c. Save the id of the filter that was changed as a variable.
   var filterId = changedInputTag.attr("id");
   // 5. If a filter value was entered then add that filterId and value
@@ -48,6 +50,7 @@ function updateFilters() {
 function filterTable() {
   // 8. Set the filtered data to the tableData.
   let filteredData = tableData
+  console.log(filteredData);
   // 9. Loop through all of the filters and keep any data that
   // matches the filter values
   Object.entries(filters).forEach(([key, value]) => {
